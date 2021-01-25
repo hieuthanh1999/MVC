@@ -55,10 +55,12 @@ class ResourceModel implements ResourceModelInterface
             unset($properties['id']);
             $sql = "INSERT INTO $this->tableName ($keys) VALUES ($values)";
             $req = Database::getBdd()->prepare($sql);
+            
             return $req->execute($properties);
         } else {
             $sql = "UPDATE $this->tableName SET $set WHERE id = :id";
             $req = Database::getBdd()->prepare($sql);
+            
             return $req->execute($properties);
         }
     }
@@ -68,6 +70,7 @@ class ResourceModel implements ResourceModelInterface
     {
         $sql = "DELETE FROM $this->tableName WHERE id = $id";
         $req = Database::getBdd()->prepare($sql);
+        
         return $req->execute();
     }
 
@@ -77,6 +80,7 @@ class ResourceModel implements ResourceModelInterface
         $sql = "SELECT * FROM $this->tableName Where id = $id";
         $req = Database::getBdd()->prepare($sql);
         $req->execute();
+        
         return $req->fetch(PDO::FETCH_OBJ);
     }
 
@@ -86,6 +90,7 @@ class ResourceModel implements ResourceModelInterface
         $sql = "SELECT * FROM $this->tableName";
         $req = Database::getBdd()->prepare($sql);
         $req->execute();
+        
         return $req->fetchAll(PDO::FETCH_OBJ);
     }
 }
