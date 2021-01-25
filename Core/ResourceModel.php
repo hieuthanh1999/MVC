@@ -65,7 +65,7 @@ class ResourceModel implements ResourceModelInterface
         }
     }
 
-    //Hàm xóa theo id
+    //Hàm xóa
     public function delete($id)
     {
         $sql = "DELETE FROM $this->tableName WHERE id = $id";
