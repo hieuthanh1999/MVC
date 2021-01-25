@@ -7,10 +7,6 @@ use MVC\Models\TaskModel;
 
 class TaskResourceModel extends ResourceModel
 {
-
-
-
-
     public function __construct()
     {
         //Gán dữ liệu
