@@ -28,7 +28,6 @@ class TasksController extends Controller
     //Tạo 1 list tasks
     public function create()
     {
-
         if (isset($_POST["title"])) {
             $this->model->setTitle($_POST['title']);
             $this->model->setDescription($_POST['description']);
