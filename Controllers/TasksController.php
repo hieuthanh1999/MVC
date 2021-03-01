@@ -54,7 +54,6 @@ class TasksController extends Controller
                 header("Location: " . WEBROOT . "tasks/index");
             }
         }
-
         $this->set($d);
         $this->render("edit");
     }
