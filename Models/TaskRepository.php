@@ -20,7 +20,6 @@ class TaskRepository
 
     public function edit($model)
     {
-
         return $this->taskResourceModel->save($model);
     }
 
